@@ -1,0 +1,107 @@
+/* ====== Design tokens ====== */
+:root{
+  --brand-1:#104b43;
+  --brand-2:#43cea2;
+  --overlay:rgba(0,48,32,.25);   /* light overlay to make text visible */
+
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:#6b7280;
+
+  --radius:12px;
+  --shadow-sm:0 2px 8px rgba(0,0,0,.08);
+
+  --font-lg:clamp(20px,2.6vw,26px);
+  --font-md:clamp(15px,2vw,18px);
+  --font-sm:clamp(12px,1.6vw,14px);
+}
+
+/* ====== Base ====== */
+*{ box-sizing:border-box; margin:0; padding-bottom: 12px;}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  min-height:100dvh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text);
+  font-family:'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+  line-height:1.5;
+
+  /* Background with overlay + photo */
+  background:
+    linear-gradient(var(--overlay), var(--overlay)),
+    url('../photos/banner.jpg');
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:cover;
+  background-color:#0b1720;
+}
+
+/* Mobile background swap */
+@media (max-width:768px), (hover:none) and (pointer:coarse){
+  body{
+    background:
+      linear-gradient(var(--overlay), var(--overlay)),
+      url('../photos/mobilebanner.jpg');
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+  }
+}
+
+/* ====== Minimal Form ====== */
+form{
+  width:min(92vw, 380px);
+padding-bottom: 50px;
+  display:grid;
+  gap:16px;
+}
+
+/* Inputs */
+input{
+  width:100%;
+  padding:12px 14px;
+  border-radius: var(--radius);
+  border:1px solid #d1d5db;
+  background:#fff;
+  font-size: var(--font-md);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+input::placeholder{ color:#94a3b8; }
+input:hover{ border-color: #185a9d; }
+input:focus-visible{
+  outline:none;
+  border-color:#185a9d;
+  box-shadow: 0 0 0 3px rgba(24,90,157,.25);
+}
+
+/* Button */
+button{
+  width:100%;
+  padding:12px 16px;
+  background: var(--brand-1);
+  color:#fff;
+  border:none;
+  border-radius: var(--radius);
+  font-size: clamp(16px,2vw,18px);
+  font-weight:600;
+  cursor:pointer;
+  transition: background .2s ease, transform .1s ease;
+}
+button:hover{
+  background:#124576;
+  transform: translateY(-1px);
+}
+button:active{
+  background:#0e3963;
+  transform: translateY(0);
+}
+
+/* Small screens */
+@media (max-width:480px){
+  form{ width:min(94vw, 300px); }
+}

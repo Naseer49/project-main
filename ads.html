@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sponsored Ads</title>
+  <link rel="stylesheet" href="styles/ads.css" />
+</head>
+<body>
+  <!-- Close button (fixed) -->
+  <button class="close-btn" id="closeBtn" aria-label="Close ads">✕</button>
+
+  <!-- Top half: Slider -->
+  <main class="wrap">
+    <section class="slider-wrap" aria-label="Featured Promotions">
+      <div class="slider" id="slider" tabindex="0" aria-live="polite" aria-atomic="true">
+        <!-- Slides (use images or MP4s). Replace src with your creatives -->
+        <a class="slide" href="https://example.com/slide-1" target="_blank" rel="noopener">
+          <img src="photos/slider1.jpg" alt="Big Offer — Slide 1" />
+        </a>
+        <a class="slide" href="https://example.com/slide-2" target="_blank" rel="noopener">
+          <img src="photos/axxonbanner.jpg" alt="Partner Promo — Slide 2" />
+        </a>
+        <a class="slide" href="https://example.com/slide-3" target="_blank" rel="noopener">
+          <img src="photos/axxonbanner.jpg" alt="Seasonal Deal — Slide 3" />
+        </a>
+      </div>
+
+      <!-- Controls -->
+      <button class="nav prev" id="prevBtn" aria-label="Previous slide">⟨</button>
+      <button class="nav next" id="nextBtn" aria-label="Next slide">⟩</button>
+      <div class="dots" id="dots" aria-label="Slide indicators"></div>
+    </section>
+
+    <!-- Bottom: 3 ads -->
+    <section class="ad-triple" aria-label="Sponsored Ads">
+      <a class="ad" id="ad1" href="https://example.com/ad-1" target="_blank" rel="noopener">
+        <img src="photos/adone.jpg" alt="Ad One" />
+        <div class="meta">
+          <p class="title">Ali Amin Gandapur</p>
+          <p class="desc">Chief Minister of Khyber Pakhtunkhwa</p>
+        </div>
+      </a>
+
+      <a class="ad" id="ad2" href="https://example.com/ad-2" target="_blank" rel="noopener">
+        <img src="photos/adtwo.jpg" alt="Ad Two" />
+        <div class="meta">
+          <p class="title">Sana Khan</p>
+          <p class="desc">Partner at Axxon Group</p>
+        </div>
+      </a>
+
+      <a class="ad" id="ad3" href="https://example.com/ad-3" target="_blank" rel="noopener">
+        <img src="photos/adthree.jpg" alt="Ad Three" />
+        <div class="meta">
+          <p class="title">Imran Khan</p>
+          <p class="desc">Founder Of Pakistan Tehreek-e-Insaf (PTI)</p>
+        </div>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    © <span id="year"></span> Axxon Group. All rights reserved.
+  </footer>
+
+  <script src="scripts/ads.js"></script>
+</body>
+</html>

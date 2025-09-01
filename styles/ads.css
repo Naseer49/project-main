@@ -1,0 +1,244 @@
+/* ========= Green Theme (Header removed) ========= */
+:root {
+  --green: #118a5a;
+  --green-dark: #0d6f49;
+
+  --bg: #118a5a;
+  /* whole background green */
+  --surface: #ffffff;
+  /* cards/panels */
+  --border: #e5e7eb;
+  --text: #0f172a;
+  --muted: #2b3a33;
+  --shadow: 0 10px 30px rgba(0, 0, 0, .18);
+  --radius: 16px;
+
+  --xl: clamp(26px, 3.2vw, 36px);
+  --lg: clamp(18px, 2.2vw, 22px);
+  --md: clamp(14px, 1.8vw, 16px);
+  --sm: clamp(12px, 1.4vw, 14px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(0deg, var(--green), var(--green-dark));
+  line-height: 1.5;
+}
+
+/* ===== Close button (fixed) ===== */
+.close-btn {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 1000;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, .35);
+  background: rgba(255, 255, 255, .9);
+  color: #0b1a12;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.close-btn:hover {
+  background: #fff;
+}
+
+/* ===== Layout ===== */
+.wrap {
+  width: 100%;
+  margin: 0 auto 28px;
+  padding: 0;
+}
+
+/* ===== Slider (full screen width, half height) ===== */
+.slider-wrap {
+  position: relative;
+  width: 100%;
+  /* full width */
+  height: 50vh;
+  /* half screen height */
+  min-height: 320px;
+  max-height: 600px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: transform .5s ease-in-out;
+  will-change: transform;
+}
+
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.slide img,
+.slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Slider controls */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, .85);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 10;
+  pointer-events: auto;  
+}
+
+.nav:hover {
+  background: #fff;
+}
+
+.prev {
+  left: 14px;
+}
+
+.next {
+  right: 14px;
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  z-index: 5;
+}
+
+.dots button {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(0, 0, 0, .3);
+  cursor: pointer;
+}
+
+.dots button[aria-current="true"] {
+  background: #ffffff;
+}
+
+/* ===== Bottom 3 ads (bigger) ===== */
+.ad-triple {
+  margin: 24px auto 0;
+  display: grid;
+  gap: 22px;
+  width: 100%;
+  max-width: 1400px;
+  /* keep nice limit */
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 16px;
+}
+
+.ad {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+  transition: transform .2s ease;
+}
+
+.ad:hover {
+  transform: translateY(-4px);
+}
+
+.ad img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.meta {
+  padding: 14px 16px;
+}
+
+.title {
+  margin: 0 0 4px;
+  font-size: var(--lg);
+  font-weight: 600;
+}
+
+.desc {
+  margin: 0;
+  color: #475569;
+  font-size: var(--sm);
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  max-width: 1400px;
+  margin: 24px auto 40px;
+  padding: 0 16px;
+  color: #e8fff5;
+  font-size: var(--sm);
+  text-align: center;
+}
+
+/* ===== Responsive ===== */
+@media (max-width:900px) {
+  .ad-triple {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ad img {
+    height: 200px;
+  }
+}
+
+@media (max-width:560px) {
+  .ad-triple {
+    grid-template-columns: 1fr;
+  }
+
+  .slider-wrap {
+    height: 45vh;
+    min-height: 260px;
+  }
+
+  .ad img {
+    height: 180px;
+  }
+}

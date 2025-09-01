@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free WiFi Login</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <div class="container">
+    <form id="loginForm" autocomplete="off">
+      <input type="text" id="name" name="name" placeholder="Name" required />
+      <input type="tel" id="number" name="number" placeholder="Phone" maxlength="11" required />
+        <input 
+        type="text" 
+        id="cnic" 
+        name="cnic" 
+        placeholder="CNIC (13 digits)" 
+        maxlength="13" 
+        pattern="\d{13}" 
+        required 
+      />
+      <div id="error-msg" class="hint" style="display:none;color:#ff4d4f;margin-top:8px;font-size:14px;"></div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <!-- ✅ External JS file -->
+  <script src="scripts/app.js"></script>
+</body>
+</html>
